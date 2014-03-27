@@ -14,11 +14,7 @@ module Spotify
     #
     # @raise ArgumentError if the arity of the given callback does not match the member
     def []=(member, callback)
-      unless callback.arity < 0 or callback.arity == arity_of(member)
-        raise ArgumentError, "#{member} callback takes #{arity_of(member)} arguments, was #{callback.arity}"
-      else
         super
-      end
     end
 
     protected
